@@ -17,3 +17,59 @@ const enderecoDesteScriptJS = endereco.dirname(process.argv[1]);
 const conteudoArquivo = fileSystem.readFileSync(enderecoDesteScriptJS + '\\dev\\stdin', 'utf8');
 const quebraLinhaWindows = '\r\n'
 let lines = conteudoArquivo.split(quebraLinhaWindows);
+
+let inicioEvento = lines.shift()
+let horaInicial = lines.shift()
+let terminoEvento = lines.shift()
+let horaFinal = lines.shift()
+
+inicioEvento = String(inicioEvento)
+horaInicial = String(horaInicial)
+terminoEvento = String(terminoEvento)
+horaFinal = String(horaFinal)
+let resultadoSegundos
+let dia,hora,minuto,segundo;
+
+
+inicioEvento = parseInt(inicioEvento[4]+inicioEvento[5])
+
+let Ihora1 = parseInt(horaInicial[0]+horaInicial[1])
+let Ihora2 = parseInt(horaInicial[5]+horaInicial[6])
+let Ihora3 = parseInt(horaInicial[10]+horaInicial[11])
+
+terminoEvento = parseInt(terminoEvento[4]+terminoEvento[5])
+
+let Fhora1 = parseInt(horaFinal[0]+horaFinal[1])
+let Fhora2 = parseInt(horaFinal[5]+horaFinal[6])
+let Fhora3 = parseInt(horaFinal[10]+horaFinal[11])
+
+
+function segundosConvert(dia,hora1,hora2,hora3){
+    let totalSegundos
+    
+    dia = dia*86400
+    hora1 = hora1*3600
+    hora2 = hora2*60
+    totalSegundos = dia+hora1+hora2+hora3
+    return totalSegundos 
+}
+
+resultadoSegundos = segundosConvert(terminoEvento,Fhora1,Fhora2,Fhora3) - segundosConvert(inicioEvento,Ihora1,Ihora2,Ihora3)
+
+dia = parseInt(Math.abs(resultadoSegundos/86400))
+hora = parseInt(Math.abs((resultadoSegundos%86400)/3600))
+minuto = parseInt(Math.abs(((resultadoSegundos%86400)%3600/60)))
+segundo = parseInt(Math.abs(((resultadoSegundos%86400)%3600%60)))
+
+console.log(`${dia} dia(s)`)
+console.log(`${hora} hora(s)`)
+console.log(`${minuto} minuto(s)`)
+console.log(`${segundo} segundo(s)`)
+
+
+
+
+
+
+
+
