@@ -13,3 +13,17 @@ const quebraLinhaWindows = '\r\n'
 let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 let x = lines.shift();
+let i = 1
+
+while (i <= 12){
+    
+    if (x%2 !== 0){
+        
+        console.log(`${x}`)
+
+    }
+
+    i++
+    x++
+}
+
