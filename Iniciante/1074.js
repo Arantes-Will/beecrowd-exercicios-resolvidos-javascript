@@ -13,21 +13,15 @@ const quebraLinhaWindows = '\r\n'
 let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 let N = lines.shift();
-let n2 = lines.shift();
-let n3 = lines.shift();
-let n4 = lines.shift();
-let n5 = lines.shift();
+let numero = lines
+let numeros = []
 
-N = parseInt(N)
-n2 = parseInt(n2)
-n3 = parseInt(n3)
-n4 = parseInt(n4)
-n5 = parseInt(n5)
-let numeros = [n2, n3, n4, n5]
 
 for(let i = 0; i < N; i++){
-    
-    
+        
+        let numeroInteiro = parseInt(numero[i])
+        numeros.push(numeroInteiro)
+
         if (numeros[i] === 0){
             console.log("NULL")
         }
