@@ -17,39 +17,9 @@ const quebraLinhaWindows = '\r\n'
 let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 let N = parseInt(lines.shift())
-let l1 = lines[0].split(" ")
-let l2 = lines[1].split(" ")
-let l3 = lines[2].split(" ")
-let l4 = [2.0, 3.0, 5.0]
 
-l1 = convert(l1)
-l2 = convert(l2)
-l3 = convert(l3)
-
-
-function convert(vetorDeString){
-    let vetor = []
-    for(let i = 0; i < vetorDeString.length; i++){
-        numeroReal = parseFloat(vetorDeString[i])
-        vetor.push(numeroReal) 
-    }
-    return vetor
+for(let i = 0 ; i < N; i++){
+    let[a,b,c] = lines.shift().split(" ").map(parseFloat)
+    let media = ((a*2+b*3+c*5)/10).toFixed(1)
+    console.log(media)
 }
-
-function media(valores,mult){
-    let soma = 0
-    for (let i = 0; i < N; i++){
-        soma = soma + (valores[i]*mult[i])
-    }
-
-    return(soma/10).toFixed(1)
- 
-}
-
-console.log(media(l1,l4))
-console.log(media(l2,l4))
-console.log(media(l3,l4))
-
-
-
-
