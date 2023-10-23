@@ -6,7 +6,7 @@ A entrada consiste de vários inteiros, um valor por linha, correspondentes as o
 
 Saída
 Para cada inteiro da entrada imprima a matriz correspondente, de acordo com o exemplo. Os valores das matrizes devem ser formatados em um campo de tamanho 3 justificados à direita e separados por espaço. Após o último caractere de cada linha da matriz não deve haver espaços em branco. Após a impressão de cada matriz deve ser deixada uma linha em branco.*/
-
+console.clear()
 const fileSystem = require('fs');
 const endereco = require('path');
 const enderecoDesteScriptJS = endereco.dirname(process.argv[1]);
