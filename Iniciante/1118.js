@@ -39,3 +39,5 @@ switch (expressao) {
     default:
       // Código a ser executado se a expressão não corresponder a nenhum dos casos
   }
+
+  // Teste para o github
