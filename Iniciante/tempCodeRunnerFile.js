@@ -1,1 +1,4 @@
-k = 0 
+do{
+    console.log(i)
+    i++
+}(i < 5)
