@@ -12,30 +12,23 @@ Se uma nota inválida for lida, deve ser impressa a mensagem “nota invalida”
 Antes da leitura de X deve ser impressa a mensagem "novo calculo (1-sim 2-nao)" e esta mensagem deve ser apresentada novamente se o valor da entrada padrão para X for menor do que 1 ou maior do que 2, conforme o exemplo abaixo.
 
 A média deve ser impressa com dois dígitos após o ponto decimal.*/
+const { addAbortListener } = require('events');
+const fileSystem = require('fs');
+const endereco = require('path');
+const enderecoDesteScriptJS = endereco.dirname(process.argv[1]);
+const conteudoArquivo = fileSystem.readFileSync(enderecoDesteScriptJS + '\\dev\\stdin', 'utf8');
+const quebraLinhaWindows = '\r\n'
+let lines = conteudoArquivo.split(quebraLinhaWindows);
 
-let cont = 0;
-let soma = 0;
-while (cont < 2){
-    valor = Number(lines.shift())
-    if (valor >= 0 & valor <= 10){
-        soma+=valor
-        cont ++
-    }
-    else{
-        console.log("nota invalida")
-    } 
+console.clear()
+
+valor = lines.shift()
+
+console.log(valor)
+
+if(valor >= 0 && valor <= 10){
+    
 }
 
-console.log(`media = ${(soma/cont).toFixed(2)}`)
 
-switch (expressao) {
-    case 1:
-      // Código a ser executado se a expressão for igual a valor1
-      break;
-    case 2:
-      // Código a ser executado se a expressão for igual a valor2
-      break;
-    // Outros casos
-    default:
-      // Código a ser executado se a expressão não corresponder a nenhum dos casos
-  }
+//console.log(`media = ${(soma/cont).toFixed(2)}`)

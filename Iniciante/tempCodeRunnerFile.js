@@ -1,1 +1,1 @@
-k = 0 
+console.log(valor)
