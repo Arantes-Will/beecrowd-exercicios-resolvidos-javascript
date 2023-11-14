@@ -26,3 +26,9 @@ for (let i = 0; i < lines.length; i ++){
     console.log(matriz)
     matriz = [[]]
 }
+
+
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+

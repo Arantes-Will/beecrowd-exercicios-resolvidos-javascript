@@ -20,6 +20,7 @@ const conteudoArquivo = fileSystem.readFileSync(enderecoDesteScriptJS + '\\dev\\
 const quebraLinhaWindows = '\r\n'
 let lines = conteudoArquivo.split(quebraLinhaWindows);
 
+<<<<<<< HEAD
 console.clear()
 
 valor = lines.shift()
@@ -32,3 +33,43 @@ if(valor >= 0 && valor <= 10){
 
 
 //console.log(`media = ${(soma/cont).toFixed(2)}`)
+=======
+const { addAbortListener } = require('events');
+const fileSystem = require('fs');
+const endereco = require('path');
+const enderecoDesteScriptJS = endereco.dirname(process.argv[1]);
+const conteudoArquivo = fileSystem.readFileSync(enderecoDesteScriptJS + '\\dev\\stdin', 'utf8');
+const quebraLinhaWindows = '\r\n'
+let lines = conteudoArquivo.split(quebraLinhaWindows);
+console.clear()
+
+let cont = 0;
+let soma = 0;
+let x = null;
+while(x != 2){
+    let nota = Number(lines.shift());
+    if(nota < 0 || nota > 10){
+        nota = null;
+        console.log("nota invalida");
+    }
+    else{
+        cont++
+        soma+=nota;
+    }
+    if(cont == 2){
+        console.log("media = " +(soma/2).toFixed(2));
+        console.log("novo calculo (1-sim 2-nao)");
+        x = Number(lines.shift());
+        cont = 0;
+        soma = 0;
+        if(x>2 || x<=0){
+            while(x>2 || x<=0){
+                console.log("novo calculo (1-sim 2-nao)");
+                x = Number(lines.shift());  
+            } 
+        }
+
+    }
+
+}
+>>>>>>> e9bd4f9ee593e36a9230d57ce53ef0ee7963576b
