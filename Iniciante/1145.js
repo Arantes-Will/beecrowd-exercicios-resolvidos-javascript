@@ -17,15 +17,13 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 console.clear()
 N = lines.shift().split(" ")
-x = parseInt(N[0])
-y = parseInt(N[1])
-let k = []
+iteracao = Number(N[0])
+seq = Number(N[1])
+cont = 0
 
-let grades = [
-    [82, 90, 78, 93],  
-    [88, 85, 76, 89],  
-    [90, 82, 87, 86],  
-    [79, 94, 91, 88]  
-  ];
+for(j = 1; j <= seq; j+=iteracao){
+  for(i = j; i <= iteracao; i++){
+    console.log(i)
+  }
+}
 
-console.log(grades.length)
