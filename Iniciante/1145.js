@@ -7,6 +7,7 @@ Saída
 Cada sequência deve ser impressa em uma linha apenas, com 1 espaço em branco entre cada número,
 conforme exemplo abaixo. Não deve haver espaço em branco após o último valor da linha.*/
 
+console.clear()
 const { addAbortListener } = require('events');
 const fileSystem = require('fs');
 const endereco = require('path');
@@ -15,17 +16,16 @@ const conteudoArquivo = fileSystem.readFileSync(enderecoDesteScriptJS + '\\dev\\
 const quebraLinhaWindows = '\r\n'
 let lines = conteudoArquivo.split(quebraLinhaWindows);
 
-console.clear()
 N = lines.shift().split(" ")
 x = parseInt(N[0])
 y = parseInt(N[1])
-let k = []
 
-let grades = [
-    [82, 90, 78, 93],  
-    [88, 85, 76, 89],  
-    [90, 82, 87, 86],  
-    [79, 94, 91, 88]  
-  ];
-
-console.log(grades.length)
+for(let i = 1; i <= y; i++){
+  process.stdout.write(i.toString())
+  if(i%x == 0){
+    process.stdout.write("\n");
+  }
+  else{
+    process.stdout.write(" ");
+}
+} 
