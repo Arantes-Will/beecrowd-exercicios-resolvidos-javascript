@@ -1,4 +1,1 @@
-do{
-    console.log(i)
-    i++
-}(i < 5)
+let k = 0; k < v.length; k++
